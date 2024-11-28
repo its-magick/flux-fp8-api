@@ -129,4 +129,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     demo = create_demo(args.config)
-    demo.launch(share=args.share)
+    demo.queue().launch(share=True)
