@@ -1,3 +1,4 @@
+import spaces
 import torch
 
 from flux_pipeline import FluxPipeline
@@ -10,6 +11,7 @@ def create_demo(
 ):
     generator = FluxPipeline.load_pipeline_from_config_path(config_path)
 
+    @spaces.GPU
     def generate_image(
         prompt,
         width,
