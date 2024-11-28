@@ -121,7 +121,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Flux")
     parser.add_argument(
-        "--config", type=str, default="configs/config-dev.json", help="Config file path"
+        "--config", type=str, default="configs/config-f8q.json", help="Config file path"
     )
     parser.add_argument(
         "--share", action="store_true", help="Create a public link to your demo"
