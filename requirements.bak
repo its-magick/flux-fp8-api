@@ -1,4 +1,5 @@
 git+https://github.com/aredden/torch-cublas-hgemm.git@master
+spaces
 einops
 PyTurboJPEG
 pydantic
