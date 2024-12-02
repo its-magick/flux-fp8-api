@@ -529,7 +529,7 @@ class FluxPipeline:
         width: int = 720,
         height: int = 1024,
         num_steps: int = 24,
-        guidance: float = 3.5,
+        guidance: float = 2.0,
         seed: int | None = None,
         init_image: torch.Tensor | str | Image.Image | np.ndarray | None = None,
         strength: float = 1.0,
