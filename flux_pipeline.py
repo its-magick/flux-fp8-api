@@ -580,7 +580,7 @@ class FluxPipeline:
             io.BytesIO: Generated image(s) in bytes format.
             int: Seed used for generation (only if return_seed is True).
         """
-        num_steps = 28 if self.name == "flux-schnell" else num_steps
+        num_steps = 8 if self.name == "flux-schnell" else num_steps
 
         init_image = self.load_init_image_if_needed(init_image)
 
