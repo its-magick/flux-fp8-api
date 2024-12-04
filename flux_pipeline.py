@@ -580,7 +580,9 @@ class FluxPipeline:
             io.BytesIO: Generated image(s) in bytes format.
             int: Seed used for generation (only if return_seed is True).
         """
-        num_steps = 8 if self.name == "flux-schnell" else num_steps
+        # Look, this sounds like a great idea, upping the step count. It's not. You just eat into the GPU overhead and end up introducing distortion all over the place
+        # Schnell is 4 steps unless you have a monster GPU you can set this on. Just leave it. I'm begging you! (ᵟຶ︵ ᵟຶ)
+        num_steps = 4 if self.name == "flux-schnell" else num_steps
 
         init_image = self.load_init_image_if_needed(init_image)
 
