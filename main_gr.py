@@ -1,6 +1,5 @@
 import spaces
 import torch
-import pruna
 from flux_pipeline import FluxPipeline
 import gradio as gr  # type: ignore
 from PIL import Image
@@ -11,19 +10,6 @@ def create_demo(
 ):
     
     generator = FluxPipeline.load_pipeline_from_config_path(config_path)
-    
-    smash_config = SmashConfig()
-    smash_config['compilers'] = ['flux_caching']
-    smash_config['comp_flux_caching_cache_interval'] = 2 # Higher is faster, but reduces quality
-    smash_config['comp_flux_caching_start_step'] = 2 # Best to keep it as the same as cache_interval
-    smash_config['comp_flux_caching_compile'] = True # Whether to additionally compile the model for extra speed up
-    smash_config['comp_flux_caching_save_model'] = False
-    
-    generator = smash(
-        model=generator,
-        token='None',  # replace <your-token> with your actual token or set to None if you do not have one yet
-        smash_config=smash_config,
-    )
 
     @spaces.GPU
     def generate_image(
