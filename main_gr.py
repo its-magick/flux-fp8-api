@@ -1,8 +1,7 @@
 import spaces
 import torch
 import pruna
-from flux_pipeline 
-import FluxPipeline
+from flux_pipeline import FluxPipeline
 import gradio as gr  # type: ignore
 from PIL import Image
 
